@@ -55,14 +55,14 @@ function Bar({ label, value, max, color, unit = '' }) {
 
 export default function SwapIntelligencePanel({ fromToken, toToken, amount, confidence, route }) {
   const { c } = useTheme()
-  if (!fromToken || !toToken || !amount || parseFloat(amount) === 0) return null
-
   const { savings, gasEst, liquidity, impact } = useMemo(() => ({
     savings:   (Math.random() * 12 + 2).toFixed(2),
     gasEst:    (Math.random() * 8 + 2).toFixed(2),
     liquidity: Math.min(95, 60 + Math.random() * 35),
     impact:    parseFloat((Math.random() * 0.4 + 0.01).toFixed(3)),
   }), [fromToken, toToken, amount])
+
+  if (!fromToken || !toToken || !amount || parseFloat(amount) === 0) return null
 
   return (
     <AnimatePresence>

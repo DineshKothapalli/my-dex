@@ -17,14 +17,15 @@ function Row({ label, value, sub, highlight }) {
 
 export default function PreflightModal({ isOpen, onClose, onConfirm, fromToken, toToken, fromAmount, toAmount, slippage, loading }) {
   const { c } = useTheme()
-  if (!fromToken || !toToken) return null
-
-  const rate        = (fromToken.price / toToken.price).toFixed(6)
-  const minReceived = toAmount ? (parseFloat(toAmount) * (1 - slippage / 100)).toFixed(6) : '–'
   const { priceImpact, gasUSD } = useMemo(() => ({
     priceImpact: (Math.random() * 0.3 + 0.01).toFixed(3),
     gasUSD:      (Math.random() * 8 + 2).toFixed(2),
   }), [])
+
+  if (!fromToken || !toToken) return null
+
+  const rate        = (fromToken.price / toToken.price).toFixed(6)
+  const minReceived = toAmount ? (parseFloat(toAmount) * (1 - slippage / 100)).toFixed(6) : '–'
 
   return (
     <AnimatePresence>
