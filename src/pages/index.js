@@ -83,22 +83,11 @@ function NavBar({ onConnectClick, connectedWallet }) {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2.5">
-          <div
-            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={{ background: 'linear-gradient(135deg, #9B6DFF 0%, #6B3DCF 100%)', boxShadow: '0 0 20px rgba(155,109,255,0.4)' }}
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M7 1L1 4.5v5L7 13l6-3.5v-5L7 1z" stroke="white" strokeWidth="1.3" fill="rgba(255,255,255,0.1)"/>
-              <circle cx="7" cy="7" r="2" fill="white"/>
-            </svg>
-          </div>
-          <span className="text-sm font-bold tracking-tight" style={{ color: c('#ffffff', '#0a0a0a') }}>my-dex</span>
-          <span
-            className="text-xs px-1.5 py-0.5 rounded font-medium"
-            style={{ background: 'rgba(155,109,255,0.15)', color: '#C4A8FF', border: '1px solid rgba(155,109,255,0.25)' }}
-          >
-            Beta
-          </span>
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+            <polygon points="8,2 13.2,11 2.8,11" stroke="#9B6DFF" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+            <circle cx="8" cy="8" r="2" fill="#9B6DFF"/>
+          </svg>
+          <span className="text-sm font-bold tracking-tight" style={{ color: c('#ffffff', '#0a0a0a'), fontFamily: 'Inter, sans-serif' }}>my-dex</span>
         </div>
 
         {/* Nav links */}
